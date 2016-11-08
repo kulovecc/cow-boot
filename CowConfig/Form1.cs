@@ -92,6 +92,13 @@ namespace CowConfig
                     MessageBox.Show("未找到listen地址！");
                     return false;
                 }
+                if (!pacUrl.Contains("http"))
+                {
+                    MessageBox.Show("listen配置有误！");
+                    return false;
+                }
+                if (pacUrl.Contains(" "))
+                    pacUrl = pacUrl.Split(' ')[0] + "/pac";
 
                 WinINet.SetIEProxy(true, false, "", pacUrl);
             }
@@ -135,7 +142,6 @@ namespace CowConfig
                 runKey = OpenRegKey(@"Software\Microsoft\Windows\CurrentVersion\Run", true);
                 if (runKey == null)
                 {
-
                     return false;
                 }
                 if (enabled)
@@ -172,15 +178,19 @@ namespace CowConfig
         {
             this.WindowState = FormWindowState.Minimized;
             //开机启动
-            if (BootCheckBox.Checked)
-                SetBoot(true);
-            else
-                SetBoot(false);
+            SetBoot(BootCheckBox.Checked);
             //代理配置
             if (AutoProxyCheckBox.Checked)
-                SetAutoProxy(true);
+            {
+                if (!SetAutoProxy(true))
+                {
+                    AutoProxyCheckBox.Checked = false;
+                }
+            }
             else
+            {
                 SetAutoProxy(false);
+            }
 
             AutoProxyToolStripMenuItem.Checked = AutoProxyCheckBox.Checked;
             BootToolStripMenuItem.Checked = BootCheckBox.Checked;
@@ -197,12 +207,16 @@ namespace CowConfig
             if (AutoProxyToolStripMenuItem.Checked)
             {
                 AutoProxyToolStripMenuItem.Checked = false;
+                AutoProxyCheckBox.Checked = false;
                 SetAutoProxy(false);
             }
             else
             {
-                AutoProxyToolStripMenuItem.Checked = true;
-                SetAutoProxy(true);
+                if (SetAutoProxy(true))
+                {
+                    AutoProxyToolStripMenuItem.Checked = true;
+                    AutoProxyCheckBox.Checked = true;
+                }
             }
         }
 
@@ -211,11 +225,13 @@ namespace CowConfig
             if (BootToolStripMenuItem.Checked)
             {
                 BootToolStripMenuItem.Checked = false;
+                BootCheckBox.Checked = false;
                 SetBoot(false);
             }
             else
             {
                 BootToolStripMenuItem.Checked = true;
+                BootCheckBox.Checked = true;
                 SetBoot(true);
             }
         }
