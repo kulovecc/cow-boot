@@ -78,7 +78,7 @@ namespace CowConfig
             if (enabled)
             {
                 string pacUrl = null;
-                StreamReader sr = new StreamReader("rc.txt", Encoding.Default);
+                StreamReader sr = new StreamReader(Application.StartupPath + "\\rc.txt", Encoding.Default);
                 String line;
                 while ((line = sr.ReadLine()) != null)
                 {
@@ -246,7 +246,7 @@ namespace CowConfig
             }
             
             ProcessStartInfo psi = new ProcessStartInfo();
-            psi.FileName = @"cow.exe";
+            psi.FileName = Application.StartupPath + "\\cow.exe";
             psi.WindowStyle = ProcessWindowStyle.Hidden;
             psi.UseShellExecute = true;
             Process.Start(psi);
