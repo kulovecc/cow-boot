@@ -247,9 +247,10 @@ namespace CowConfig
             
             ProcessStartInfo psi = new ProcessStartInfo();
             psi.FileName = Application.StartupPath + "\\cow.exe";
-            psi.WindowStyle = ProcessWindowStyle.Hidden;
-            psi.UseShellExecute = true;
-            Process.Start(psi);
+            psi.WorkingDirectory = Application.StartupPath;
+            psi.CreateNoWindow = true;
+            psi.UseShellExecute = false;
+            Process process = Process.Start(psi);
         }
 
         private void cowFrom_Load(object sender, EventArgs e)

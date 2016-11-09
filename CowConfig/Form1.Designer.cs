@@ -101,41 +101,41 @@
             this.QuitToolStripMenuItem,
             this.ShowHideToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 136);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(130, 114);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // ReloadToolStripMenuItem
             // 
             this.ReloadToolStripMenuItem.Name = "ReloadToolStripMenuItem";
-            this.ReloadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ReloadToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.ReloadToolStripMenuItem.Text = "重新加载";
             this.ReloadToolStripMenuItem.Click += new System.EventHandler(this.ReloadToolStripMenuItem_Click);
             // 
             // AutoProxyToolStripMenuItem
             // 
             this.AutoProxyToolStripMenuItem.Name = "AutoProxyToolStripMenuItem";
-            this.AutoProxyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.AutoProxyToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.AutoProxyToolStripMenuItem.Text = "启用代理";
             this.AutoProxyToolStripMenuItem.Click += new System.EventHandler(this.AutoProxyToolStripMenuItem_Click);
             // 
             // BootToolStripMenuItem
             // 
             this.BootToolStripMenuItem.Name = "BootToolStripMenuItem";
-            this.BootToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.BootToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.BootToolStripMenuItem.Text = "开机启动";
             this.BootToolStripMenuItem.Click += new System.EventHandler(this.BootToolStripMenuItem_Click);
             // 
             // QuitToolStripMenuItem
             // 
             this.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem";
-            this.QuitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.QuitToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.QuitToolStripMenuItem.Text = "退出";
             this.QuitToolStripMenuItem.Click += new System.EventHandler(this.QuitToolStripMenuItem_Click);
             // 
             // ShowHideToolStripMenuItem
             // 
             this.ShowHideToolStripMenuItem.Name = "ShowHideToolStripMenuItem";
-            this.ShowHideToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ShowHideToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.ShowHideToolStripMenuItem.Text = "显示/隐藏";
             this.ShowHideToolStripMenuItem.Visible = false;
             this.ShowHideToolStripMenuItem.Click += new System.EventHandler(this.ShowHideToolStripMenuItem_Click);
